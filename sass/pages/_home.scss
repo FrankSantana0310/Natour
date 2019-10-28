@@ -1,0 +1,89 @@
+.section-about {
+    background-color: $color-gray-light-1;
+    padding: 25rem;
+    margin-top: -22.5rem;
+
+    
+
+
+}
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8),rgba($color-primary-dark,0.8)),url(../../img/nat-4.jpg);
+    background-size: cover;
+    //clip-path: polygon(0 0 , 100% 0, 100% 75%, 0 100%);
+    transform: skewY(-7deg);
+   
+   
+    //Selector todos los direct child del elemento con la clase section-features
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    background-color: $color-gray-light-1;
+    padding: 20rem 0 15rem 0;
+
+    
+    @include respond(tab-port){
+        padding: 10rem  0;
+       }
+}
+
+.section-stories {
+    
+    padding: 20rem 0;
+    background-color: rgba($color-gray-light-1, .5);
+    position: relative;
+    z-index: 1;
+
+    
+    @include respond(tab-port){
+        padding: 3rem, 0;
+    }
+    
+}
+
+.section-book {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+}
+
+.book {
+    //Se puede hacer este efecto poniendo en lugar de to right bottom o cosas asi en deg y despues se dice que color queieres en cada porciento
+    background-image: linear-gradient(105deg,
+    rgba($color-white, 0.8) 0%,
+    rgba($color-white, 0.8) 50%,
+    transparent 50%),  url(../img/nat-10.jpg) ;
+    // Esto es lo mismo que decir cover;
+    background-size: 100%;
+    //height: 50vh;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba($color-black, .7);
+
+    
+    @include respond(tab-port){
+        //Se puede hacer este efecto poniendo en lugar de to right bottom o cosas asi en deg y despues se dice que color queieres en cada porciento
+    background-image: linear-gradient(105deg,
+    rgba($color-white, 0.8) 0%,
+    rgba($color-white, 0.8) 100%,
+    transparent 65%),  url(../img/nat-10.jpg) ;
+    // cover es similar al 100% del width pero no es lo mismo en este caso es cover;
+    background-size: cover;
+    
+   
+   
+    }
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+
+        @include respond(tab-port){
+            width: 100%;
+        }
+    }
+}

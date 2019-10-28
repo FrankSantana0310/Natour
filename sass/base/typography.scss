@@ -1,0 +1,107 @@
+@import '../abstracts/variables';
+
+body {
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $color-gray;
+    
+    box-sizing: border-box;
+}
+
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    /* Cuando la animacion termina se mueve un poquito hacia arriva de esta manera se soluciona chequear luego; */
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 3s;
+       animation-timing-function: ease-out;
+
+       @include respond(phone){//with < 600
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 1.5rem;
+     }
+    
+        /* Otras propiedas para las animaciones que puedo utilizar;
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+         animation-timing-function: ease-in; */
+    
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.38rem;
+        /* Esta es la forma conrta para poner las animaciones sin tener que hacerlo como en heading-primary-main */
+        animation: moveInRight 3s ease-out;
+
+        
+       @include respond(phone){//with < 600
+        
+        letter-spacing: .5rem;
+     }
+    }   
+}
+
+.heading-secondary {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    //Esto es para hacer que se vea el color del background en le text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: .1rem;
+    //Por alguna rason simpre que voy a usar el hover por ejemplo hay que especificar el transition, tengo que ver por que 
+    transition: all .2s;
+
+    
+    @include respond(tab-port){//with < 900
+        font-size: 3rem;
+        letter-spacing: 0;
+     }
+    
+    @include respond(phone){//with < 600
+        font-size: 2.5rem;
+        letter-spacing: 0;
+     }
+
+    &:hover {
+        transform: skewY(-2deg) skewX(4deg) scale(1.1);
+        text-shadow: 1rem 2rem 2rem rgba($color-black, .4)
+        
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include respond(phone){//with < 600
+        font-size: 1rem;
+        letter-spacing: 0;
+     }
+}
+
+.parograph {
+    font-size: $default-font-size;
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
